@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lich_Su_Giao_Dich"
+    android:orientation="vertical"
+    android:background="#F4C57F">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#EAD5B6">
+
+        <ImageView
+
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/coffee_den_da">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giao dịch Thành Công">
+
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:textSize="8pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30/04/2021">
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="180dp"
+                android:textStyle="bold"
+                android:textSize="9pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi Tiết">
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#EAD5B6">
+
+        <ImageView
+
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/coffee_den_da">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giao dịch Thành Công">
+
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:textSize="8pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30/04/2021">
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="180dp"
+                android:textStyle="bold"
+                android:textSize="9pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi Tiết">
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#EAD5B6">
+
+        <ImageView
+
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/coffee_den_da">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giao dịch Thành Công">
+
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:textSize="8pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30/04/2021">
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="180dp"
+                android:textStyle="bold"
+                android:textSize="9pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi Tiết">
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#EAD5B6">
+
+        <ImageView
+
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/coffee_den_da">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giao dịch Thành Công">
+
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:textSize="8pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30/04/2021">
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="180dp"
+                android:textStyle="bold"
+                android:textSize="9pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi Tiết">
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#EAD5B6">
+
+        <ImageView
+
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/coffee_den_da">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:textSize="10pt"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giao dịch Thành Công">
+
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:textSize="8pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30/04/2021">
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="180dp"
+                android:textStyle="bold"
+                android:textSize="9pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi Tiết">
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:background="#FFA47A"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@drawable/icon_home"
+                android:layout_width="103dp"
+                android:layout_height="60dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="7pt"
+                android:text="Trang chủ">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@drawable/icon_coffee"
+                android:layout_width="102dp"
+                android:layout_height="60dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="7pt"
+                android:text="Đơn Hàng">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@drawable/icon_shop"
+                android:layout_width="102dp"
+                android:layout_height="60dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="7pt"
+                android:text="Trang chủ">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:src="@drawable/ic_baseline_person_outline_24"
+                android:layout_width="103dp"
+                android:layout_height="60dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="7pt"
+                android:text="Trang chủ">
+            </TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
