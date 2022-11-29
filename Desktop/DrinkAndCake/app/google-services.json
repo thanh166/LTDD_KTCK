@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "55594861192",
+    "project_id": "drinkandcake-d01ad",
+    "storage_bucket": "drinkandcake-d01ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55594861192:android:3615dbe56e7460aea3153d",
+        "android_client_info": {
+          "package_name": "com.example.drinkandcake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55594861192-9c67uh7q2f7eg5141v6t75bsqtdseral.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChuOEx4hSksaGfFLCrQlHqfyASuw5HTnY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55594861192-9c67uh7q2f7eg5141v6t75bsqtdseral.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

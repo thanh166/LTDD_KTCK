@@ -4,7 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+
+import com.example.drinkandcake.model.Product;
+import com.example.drinkandcake.my_interface.IClickItemProductListener;
+import com.example.drinkandcake.sqlite.DBHelper;
+import com.example.drinkandcake.sqlite.ProductDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,24 +25,51 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+//        DBHelper dbHelper = new DBHelper(this);
+//        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        //inserP();
+
+
         recyclerView = findViewById(R.id.rcv_food);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        FoodAdapter adapter = new FoodAdapter(getListFood());
+        FoodAdapter adapter = new FoodAdapter(getListFood(), new IClickItemProductListener() {
+            @Override
+            public void onClickItemProduct(Product product) {
+                onClickGoToDetail(product);
+            }
+        });
         recyclerView.setAdapter(adapter);
+        //sqLiteDatabase.close();
+    }
+    private List<Product> getListFood() {
+//        ProductDao productDao = new ProductDao(this);
+//        return productDao.getALL();
+            List<Product> mlis = new ArrayList<>();
+        mlis.add(new Product("25","tra sua",25000));
+          return mlis;
+    }
+    private void inserP(){
+        ProductDao productDao = new ProductDao(this);
+        Product product = new Product("25","tra sua",25000);
+        productDao.insert(product);
     }
 
-    private List<Product> getListFood() {
-        List<Product> mList = new ArrayList<>();
-        mList.add(new Product(1,"cafe 1",10000,R.drawable.cafe));
-        mList.add(new Product(2,"cafe 2",10000,R.drawable.cafe));
-        mList.add(new Product(3,"cafe 3",10000,R.drawable.cafe));
-        mList.add(new Product(4,"cafe 4",10000,R.drawable.cafe));
-        mList.add(new Product(1,"cafe 1",10000,R.drawable.cafe));
-        mList.add(new Product(2,"cafe 2",10000,R.drawable.cafe));
-        mList.add(new Product(3,"cafe 3",10000,R.drawable.cafe));
-        mList.add(new Product(4,"cafe 4",10000,R.drawable.cafe));
-        return mList;
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        SharedPreferences sharedPreferences = getSharedPreferences("mySave",MODE_PRIVATE);
+//        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+//        myEdit.putString("idProduct","id");
+//        myEdit.commit();
+//
+//    }
+    private void onClickGoToDetail(Product product){
+        Intent intent = new Intent(this,OderActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("productid",product);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

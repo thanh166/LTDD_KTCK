@@ -7,16 +7,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.drinkandcake.model.Product;
+import com.example.drinkandcake.my_interface.IClickItemProductListener;
 
 import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder>{
 
     private List<Product> mListFood;
+    private IClickItemProductListener iClickItemProductListener;
 
-    public FoodAdapter(List<Product> mListFood) {
+    public FoodAdapter(List<Product> mListFood, IClickItemProductListener iClickItemProductListener) {
         this.mListFood = mListFood;
+        this.iClickItemProductListener = iClickItemProductListener;
     }
 
     @NonNull
@@ -28,15 +34,19 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-        Product product = mListFood.get(position);
+        final Product product = mListFood.get(position);
         if (product == null){
             return;
         }
-
-        holder.imageView.setImageResource(product.getImage());
         holder.textViewPrice.setText(product.getPrice()+"");
         holder.textViewName.setText(product.getName());
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iClickItemProductListener.onClickItemProduct(product);
+            }
+        });
     }
 
     @Override
@@ -51,11 +61,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
         private ImageView imageView;
         private TextView textViewName,textViewPrice;
+        private CardView cardView;
 
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            cardView = itemView.findViewById(R.id.layout_item);
             imageView = itemView.findViewById(R.id.img_food);
             textViewName = itemView.findViewById(R.id.tv_name_food);
             textViewPrice = itemView.findViewById(R.id.tv_price_food);
