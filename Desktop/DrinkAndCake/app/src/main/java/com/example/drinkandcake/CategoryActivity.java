@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.drinkandcake.model.Product;
 import com.example.drinkandcake.my_interface.IClickItemProductListener;
+import com.example.drinkandcake.sqlite.ProductDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +24,10 @@ public class CategoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        ProductDao productDao = new ProductDao(this);
 
         List<Product> list = new ArrayList<>();
-        list.add(new Product("1", "tra sua", 20));
-        list.add(new Product("2", "tra sua", 20));
-        list.add(new Product("3", "tra sua", 20));
+        list = productDao.getALL();
 
         recyclerView = findViewById(R.id.RcvCategory);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
@@ -42,26 +42,27 @@ public class CategoryActivity extends AppCompatActivity {
                 clickBuy(product);
             }
             @Override
-            public void onClickCart(Product product) {
-                clickOrder(product);
+            public void onClickCart(Product product,int quantity) {
+                clickOrder(product,quantity);
             }
         });
         recyclerView.setAdapter(adapter);
     }
 
     private void clickBuy(Product product) {
-        Intent intent = new Intent(this,XacNhanDonHang.class);
+        Intent intent = new Intent(CategoryActivity.this,XacNhanDonHang.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("productBuy",product);
-        intent.putExtras(bundle);
+        bundle.putSerializable("productId",product);
+        intent.putExtra("Buy",bundle);
         startActivity(intent);
     }
 
-    private void clickOrder(Product product) {
+    private void clickOrder(Product product,int quantity) {
         Intent intent = new Intent(this,OderActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("productOrder",product);
-        intent.putExtra("order",bundle);
+        bundle.putSerializable("productId",product);
+        bundle.putInt("quantity",quantity);
+        intent.putExtra("Order",bundle);
         startActivity(intent);
     }
 }

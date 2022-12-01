@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -27,18 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
     private Button login,register;
     private EditText edTextEmail,edTextPassord;
+    private Account account = new Account();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Account account = new Account("1","huynhtrung","123","user");
-//        AccountDao accountDao = new AccountDao(this);
 
+        AccountDao accountDao = new AccountDao(this);
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        //accountDao.insert(account);
-        sqLiteDatabase.close();
+
 
         login = findViewById(R.id.login);
         register = findViewById(R.id.register);
@@ -62,13 +62,15 @@ public class MainActivity extends AppCompatActivity {
                 int i = 0;
                 for(Account a : list){
                     if(email.equals(a.getName()) && password.equals(a.getPassword())){
+                        account = a;
+                        onPause();
                         Intent intent = new Intent(MainActivity.this, Home.class);
                         startActivity(intent);
                         finishAffinity();
                         break;
                     }
-                    Toast.makeText(MainActivity.this, "Authentication fail", Toast.LENGTH_SHORT).show();
                 }
+                Toast.makeText(MainActivity.this, "Authentication fail", Toast.LENGTH_SHORT).show();
             }
 
             private void onClickSignin() {
@@ -98,5 +100,16 @@ public class MainActivity extends AppCompatActivity {
                 finishAffinity();
             }
         });
+        sqLiteDatabase.close();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPreferences = getSharedPreferences("AccountActivity",MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+        myEdit.putInt("idUser",account.getId());
+        myEdit.putString("nameUser",account.getName());
+        myEdit.commit();
     }
 }

@@ -6,8 +6,7 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(int id, int idP, int idUser, int quantity) {
-        this.id = id;
+    public Cart(int idP, int idUser, int quantity) {
         this.idP = idP;
         this.idUser = idUser;
         this.quantity = quantity;
@@ -21,12 +20,12 @@ public class Cart {
         this.idUser = idUser;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getIdP() {

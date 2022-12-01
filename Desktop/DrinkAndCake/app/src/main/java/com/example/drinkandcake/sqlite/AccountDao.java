@@ -41,7 +41,7 @@ public class AccountDao {
 
     public long insert(Account account){
         ContentValues contentValues = new ContentValues();
-        contentValues.put("id",account.getId());
+        //contentValues.put("id",account.getId());
         contentValues.put("name",account.getName());
         contentValues.put("password",account.getPassword());
         contentValues.put("role",account.getRole());

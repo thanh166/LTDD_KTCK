@@ -33,7 +33,7 @@
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
@@ -86,10 +86,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ListView
-                android:id="@+id/LvGiohang"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RcvCategory2"
                 android:layout_width="match_parent"
-                android:layout_height="620dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="75dp"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="1dp" />
         </LinearLayout>

@@ -16,8 +16,8 @@ public class XacNhanDonHang extends AppCompatActivity {
         setContentView(R.layout.activity_xac_nhan_don_hang);
 
         Intent intent = getIntent();
-        Bundle bundle = intent.getBundleExtra("order");
-        Product product = (Product) bundle.getSerializable("productOrder");
+        Bundle bundle = intent.getBundleExtra("Buy");
+        Product product = (Product) bundle.getSerializable("productId");
 
         Toast.makeText(this, product.getName(), Toast.LENGTH_SHORT).show();
     }

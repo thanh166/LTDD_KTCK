@@ -28,6 +28,7 @@ public class ProductDao {
             product.setId(cursor.getString(cursor.getColumnIndex("id")));
             product.setName(cursor.getString(cursor.getColumnIndex("name")));
             product.setPrice(cursor.getFloat(cursor.getColumnIndex("price")));
+            product.setImage(cursor.getInt(cursor.getColumnIndex("image")));
 
             list.add(product);
         }
@@ -50,6 +51,7 @@ public class ProductDao {
         contentValues.put("id",product.getId());
         contentValues.put("name",product.getName());
         contentValues.put("price",product.getPrice());
+        contentValues.put("image",product.getImage());
         return sqLiteDatabase.insert("product",null,contentValues);
     }
 

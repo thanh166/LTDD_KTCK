@@ -49,7 +49,7 @@ public class Home extends AppCompatActivity {
             public void onClickBuy(Product product) {
             }
             @Override
-            public void onClickCart(Product product) {
+            public void onClickCart(Product product, int quantity) {
             }
         });
         recyclerView.setAdapter(adapter);
@@ -75,7 +75,7 @@ public class Home extends AppCompatActivity {
     }
     private void inserP(){
         ProductDao productDao = new ProductDao(this);
-        Product product = new Product("25","tra sua",25000);
+        Product product = new Product("tra sua",25000,R.drawable.cafe);
         productDao.insert(product);
     }
 

@@ -40,6 +40,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         }
         holder.textViewPrice.setText(product.getPrice()+"");
         holder.textViewName.setText(product.getName());
+        holder.imageView.setImageResource(product.getImage());
         final int[] i = {Integer.parseInt(holder.quantity.getText().toString())};
 
         holder.cong.setOnClickListener(new View.OnClickListener() {
@@ -65,12 +66,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.addCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iClickItemProductListener.onClickCart(product);
+                iClickItemProductListener.onClickCart(product,Integer.parseInt(holder.quantity.getText().toString()));
             }
         });
-
-
-
     }
 
     @Override
