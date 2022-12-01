@@ -24,7 +24,7 @@ public class AccountDao {
         Cursor cursor = sqLiteDatabase.rawQuery(sql, selectArgs);
         while (cursor.moveToNext()){
             Account account = new Account();
-            account.setId(cursor.getString(cursor.getColumnIndex("id")));
+            account.setId(cursor.getInt(cursor.getColumnIndex("id")));
             account.setName(cursor.getString(cursor.getColumnIndex("name")));
             account.setPassword(cursor.getString(cursor.getColumnIndex("password")));
             account.setRole(cursor.getString(cursor.getColumnIndex("role")));

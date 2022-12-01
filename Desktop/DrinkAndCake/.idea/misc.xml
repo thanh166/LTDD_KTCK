@@ -3,17 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_baseline_do_not_disturb_on_24.xml" value="0.1225" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/bgRegister.xml" value="0.1645" />
         <entry key="app/src/main/res/drawable/bgregister.xml" value="0.1635" />
+        <entry key="app/src/main/res/drawable/btn_didengiohang.xml" value="0.149" />
+        <entry key="app/src/main/res/drawable/btn_viengio.xml" value="0.149" />
         <entry key="app/src/main/res/drawable/color.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.149" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/quaylai.xml" value="0.149" />
         <entry key="app/src/main/res/drawable/radius_avata.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/vien.xml" value="0.197" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.19017079671223958" />
+        <entry key="app/src/main/res/layout/activity_category.xml" value="0.14010416666666667" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2562989165817482" />
+        <entry key="app/src/main/res/layout/activity_oder.xml" value="0.14010416666666667" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_xac_nhan_don_hang.xml" value="0.14010416666666667" />
+        <entry key="app/src/main/res/layout/layout_category.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_food.xml" value="0.25812937418619797" />
       </map>
     </option>

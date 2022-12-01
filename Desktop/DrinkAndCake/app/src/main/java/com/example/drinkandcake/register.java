@@ -39,13 +39,17 @@ public class register extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AccountDao accountDao = new AccountDao(register.this);
-                String emailR = email.getText().toString().trim();
-                String passwordR = password.getText().toString().trim();
-                accountDao.insert(new Account("3",emailR,passwordR,"user"));
+                try {
+                    AccountDao accountDao = new AccountDao(register.this);
+                    String emailR = email.getText().toString().trim();
+                    String passwordR = password.getText().toString().trim();
+                    accountDao.insert(new Account(emailR,passwordR,"user"));
+                    Intent intent = new Intent(register.this,MainActivity.class);
+                    startActivity(intent);
+                }catch (Exception e){
+                    Toast.makeText(register.this,"Register fail",Toast.LENGTH_SHORT).show();
+                }
 
-                Intent intent = new Intent(register.this,MainActivity.class);
-                startActivity(intent);
             }
         });
     }

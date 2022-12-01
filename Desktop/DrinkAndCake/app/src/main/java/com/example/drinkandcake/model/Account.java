@@ -1,7 +1,7 @@
 package com.example.drinkandcake.model;
 
 public class Account {
-    private String id;
+    private int id;
     private String name;
     private String password;
     private String role;
@@ -9,18 +9,24 @@ public class Account {
     public Account() {
     }
 
-    public Account(String id, String name, String password, String role) {
+    public Account(int id, String name, String password, String role) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.role = role;
     }
 
-    public String getId() {
+    public Account(String emailR, String passwordR, String role) {
+        this.name = emailR;
+        this.password = passwordR;
+        this.role = role;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
