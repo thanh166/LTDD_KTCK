@@ -109,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("AccountActivity",MODE_PRIVATE);
         SharedPreferences.Editor myEdit = sharedPreferences.edit();
         myEdit.putInt("idUser",account.getId());
-        myEdit.putString("nameUser",account.getName());
         myEdit.commit();
     }
 }

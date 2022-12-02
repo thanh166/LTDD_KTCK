@@ -28,6 +28,8 @@ public class AccountDao {
             account.setName(cursor.getString(cursor.getColumnIndex("name")));
             account.setPassword(cursor.getString(cursor.getColumnIndex("password")));
             account.setRole(cursor.getString(cursor.getColumnIndex("role")));
+            account.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
+            account.setAddress(cursor.getString(cursor.getColumnIndex("address")));
 
             list.add(account);
         }
@@ -45,6 +47,8 @@ public class AccountDao {
         contentValues.put("name",account.getName());
         contentValues.put("password",account.getPassword());
         contentValues.put("role",account.getRole());
+        contentValues.put("phone",account.getPhone());
+        contentValues.put("address",account.getAddress());
         return sqLiteDatabase.insert("account",null,contentValues);
     }
 }

@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class register extends AppCompatActivity {
     Button registerBtn;
-    EditText email,password,confirmPass;
+    EditText email,password,phone,address;
     private FirebaseAuth mAuth;
 
     @Override
@@ -33,7 +33,8 @@ public class register extends AppCompatActivity {
 
         email = findViewById(R.id.emailRegister);
         password = findViewById(R.id.passwordRegister);
-        confirmPass = findViewById(R.id.confirmPass);
+        phone = findViewById(R.id.phone);
+        address = findViewById(R.id.address);
         registerBtn = findViewById(R.id.register);
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +44,9 @@ public class register extends AppCompatActivity {
                     AccountDao accountDao = new AccountDao(register.this);
                     String emailR = email.getText().toString().trim();
                     String passwordR = password.getText().toString().trim();
-                    accountDao.insert(new Account(emailR,passwordR,"user"));
+                    String phoneR = address.getText().toString().trim();
+                    String addressR = address.getText().toString().trim();
+                    accountDao.insert(new Account(emailR,passwordR,"user",phoneR,addressR));
                     Intent intent = new Intent(register.this,MainActivity.class);
                     startActivity(intent);
                 }catch (Exception e){

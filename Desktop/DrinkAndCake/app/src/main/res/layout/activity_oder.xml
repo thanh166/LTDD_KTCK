@@ -30,6 +30,28 @@
             android:textSize="25dp" />
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/header"
+        android:background="#ffbd59">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RcvCategory2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
@@ -52,9 +74,10 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/totalPr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="190.000đ "
@@ -64,7 +87,7 @@
 
 
         <Button
-            android:id="@+id/btnDathang_Giohang"
+            android:id="@+id/btnDathang"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#b22222"
@@ -73,27 +96,5 @@
             android:textSize="20dp"
             android:textStyle="bold" />
     </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/footer"
-        android:layout_below="@+id/header"
-        android:background="#ffbd59">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RcvCategory2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="75dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="1dp" />
-        </LinearLayout>
-    </ScrollView>
 
 </RelativeLayout>

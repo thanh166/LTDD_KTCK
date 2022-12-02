@@ -27,8 +27,9 @@ public class ProductDao {
             Product product = new Product();
             product.setId(cursor.getString(cursor.getColumnIndex("id")));
             product.setName(cursor.getString(cursor.getColumnIndex("name")));
-            product.setPrice(cursor.getFloat(cursor.getColumnIndex("price")));
-            product.setImage(cursor.getInt(cursor.getColumnIndex("image")));
+            product.setPrice(cursor.getInt(cursor.getColumnIndex("price")));
+            product.setImage(cursor.getString(cursor.getColumnIndex("image")));
+            product.setCategory(cursor.getString(cursor.getColumnIndex("category")));
 
             list.add(product);
         }
@@ -38,6 +39,12 @@ public class ProductDao {
     public List<Product> getALL(){
         String sql = "SELECT * FROM product";
         return get(sql);
+    }
+
+    public List<Product> getByCategory(String category){
+        String sql = "SELECT * FROM product WHERE category = ?";
+        List<Product> list = get(sql, category);
+        return list;
     }
 
     public Product getById(String id){
@@ -52,6 +59,7 @@ public class ProductDao {
         contentValues.put("name",product.getName());
         contentValues.put("price",product.getPrice());
         contentValues.put("image",product.getImage());
+        contentValues.put("category",product.getCategory());
         return sqLiteDatabase.insert("product",null,contentValues);
     }
 
@@ -59,7 +67,7 @@ public class ProductDao {
         ContentValues contentValues = new ContentValues();
         contentValues.put("name",product.getName());
         contentValues.put("price",product.getPrice());
-
+        contentValues.put("category",product.getCategory());
         return sqLiteDatabase.update("product",contentValues,"id = ?",new String[]{product.getId()});
     }
 

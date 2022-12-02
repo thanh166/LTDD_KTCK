@@ -16,7 +16,7 @@
         android:layout_marginTop="100dp"
         android:background="@drawable/bgregister"
         android:orientation="vertical"
-        android:paddingTop="200dp">
+        android:paddingTop="80dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -30,11 +30,11 @@
         <EditText
             android:id="@+id/emailRegister"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:background="@drawable/radius"
-            android:textSize="41dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -50,11 +50,11 @@
         <EditText
             android:id="@+id/passwordRegister"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:background="@drawable/radius"
-            android:textSize="41dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -68,13 +68,33 @@
             />
 
         <EditText
-            android:id="@+id/confirmPass"
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/radius"
+            android:textSize="20dp" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
+            android:text="Địa chỉ"
+            android:textColor="@color/textcolor"
+            android:textSize="30dp"
+
+            />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:background="@drawable/radius"
-            android:textSize="41dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="match_parent"
