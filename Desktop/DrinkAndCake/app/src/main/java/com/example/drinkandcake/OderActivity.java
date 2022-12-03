@@ -60,7 +60,7 @@ public class OderActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        FoodCartAdapter adapter = new FoodCartAdapter(mListP, new IClickItemProductListener() {
+        FoodCartAdapter adapter = new FoodCartAdapter(this,mListP, new IClickItemProductListener() {
             @Override
             public void onClickItemProduct(Product product) {
                 onClickGoToDetail(product);

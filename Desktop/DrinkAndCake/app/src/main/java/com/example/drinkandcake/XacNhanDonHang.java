@@ -65,6 +65,6 @@ public class XacNhanDonHang extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
+
 }

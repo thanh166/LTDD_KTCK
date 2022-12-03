@@ -1,5 +1,6 @@
 package com.example.drinkandcake;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     private List<Product> mListFood;
     private IClickItemProductListener iClickItemProductListener;
+    private Context context;
 
-    public FoodAdapter(List<Product> mListFood, IClickItemProductListener iClickItemProductListener) {
+    public FoodAdapter(Context context,List<Product> mListFood, IClickItemProductListener iClickItemProductListener) {
         this.mListFood = mListFood;
         this.iClickItemProductListener = iClickItemProductListener;
+        this.context = context;
     }
 
     @NonNull
@@ -39,9 +42,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         if (product == null){
             return;
         }
+
+        String imageName = product.getImage();
+        int resID = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+        holder.imageView.setImageResource(resID);
         holder.textViewPrice.setText(product.getPrice()+"");
         holder.textViewName.setText(product.getName());
-        holder.imageView.setImageResource(R.drawable.cafe);
+
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

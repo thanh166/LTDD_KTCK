@@ -44,7 +44,7 @@ public class CategoryActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.RcvCategory);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(gridLayoutManager);
-        CategoryAdapter adapter = new CategoryAdapter(list, new IClickItemProductListener() {
+        CategoryAdapter adapter = new CategoryAdapter(this,list, new IClickItemProductListener() {
             @Override
             public void onClickItemProduct(Product product) {
             }

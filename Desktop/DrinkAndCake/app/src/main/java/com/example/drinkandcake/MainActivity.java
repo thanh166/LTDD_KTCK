@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AccountDao accountDao = new AccountDao(this);
+
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
 
@@ -55,14 +55,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
             private void onClickSigninSqlite() {
-                String email = edTextEmail.getText().toString();
-                String password = edTextPassord.getText().toString();
+                String email = edTextEmail.getText().toString().trim();
+                String password = edTextPassord.getText().toString().trim();
                 AccountDao accountDao = new AccountDao(MainActivity.this);
                 List<Account> list = accountDao.getALL();
                 int i = 0;
                 boolean bol = false;
                 for(Account a : list){
-                    if(email.equals(a.getName()) && password.equals(a.getPassword())){
+                    if(email.equals(a.getEmail()) && password.equals(a.getPassword())){
                         bol = true;
                         account = a;
                         onPause();

@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
@@ -28,6 +29,7 @@ import java.util.List;
 public class Home extends AppCompatActivity {
     private RecyclerView recyclerView;
     CardView cafe,ts,nuoc,banh;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +80,7 @@ public class Home extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        FoodAdapter adapter = new FoodAdapter(getListFood(), new IClickItemProductListener() {
+        FoodAdapter adapter = new FoodAdapter(this,getListFood(), new IClickItemProductListener() {
             @Override
             public void onClickItemProduct(Product product) {
                 onClickGoToDetail(product);

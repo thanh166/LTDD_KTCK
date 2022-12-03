@@ -65,7 +65,5 @@ public class BuyProductActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-
-        //Toast.makeText(this, product.getName(), Toast.LENGTH_SHORT).show();
     }
 }

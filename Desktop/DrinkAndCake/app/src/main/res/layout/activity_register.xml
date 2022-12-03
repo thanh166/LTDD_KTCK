@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/bgregister"
         android:orientation="vertical"
         android:paddingTop="80dp">
@@ -81,11 +81,27 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
+            android:text="Họ và tên"
+            android:textColor="@color/textcolor"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/radius"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
             android:text="Địa chỉ"
             android:textColor="@color/textcolor"
-            android:textSize="25dp"
-
-            />
+            android:textSize="25dp" />
 
         <EditText
             android:id="@+id/address"
@@ -95,6 +111,7 @@
             android:layout_marginRight="50dp"
             android:background="@drawable/radius"
             android:textSize="20dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,8 +149,8 @@
             app:cardCornerRadius="85dp">
 
             <ImageView
-                android:layout_width="170dp"
-                android:layout_height="170dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/logo" />
         </androidx.cardview.widget.CardView>

@@ -90,13 +90,15 @@
             android:textSize="20dp"
             android:textStyle="bold" />
     </LinearLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_bottom_nav"
         app:itemBackground="@color/navcolor"
-        app:itemTextColor="@color/textcolor"/>
+        app:itemTextColor="@color/textcolor"
+        app:menu="@menu/menu_bottom_nav"
+        />
 
 </RelativeLayout>
