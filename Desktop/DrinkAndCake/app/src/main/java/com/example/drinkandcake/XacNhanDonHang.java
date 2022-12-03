@@ -37,7 +37,7 @@ public class XacNhanDonHang extends AppCompatActivity {
 
         SharedPreferences myR = getSharedPreferences("AccountActivity",MODE_PRIVATE);
         int idU = myR.getInt("idUser",0);
-        String nameU = myR.getString("nameUser","");
+        //String nameU = myR.getString("nameUser","");
 
         ProductDao productDao = new ProductDao(this);
         List<Product> mListP = new ArrayList<>();

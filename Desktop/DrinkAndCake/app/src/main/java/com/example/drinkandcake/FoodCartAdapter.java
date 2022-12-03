@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drinkandcake.model.Product;
 import com.example.drinkandcake.my_interface.IClickItemProductListener;
+import com.example.drinkandcake.sqlite.CartDao;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class FoodCartAdapter extends RecyclerView.Adapter<FoodCartAdapter.FoodVi
 
     private List<Product> mListFood;
     private IClickItemProductListener iClickItemProductListener;
+    private int def = 1;
 
     public FoodCartAdapter(List<Product> mListFood, IClickItemProductListener iClickItemProductListener) {
         this.mListFood = mListFood;
@@ -50,20 +52,29 @@ public class FoodCartAdapter extends RecyclerView.Adapter<FoodCartAdapter.FoodVi
                 iClickItemProductListener.onClickItemProduct(product);
             }
         });
-        final int[] i = {Integer.parseInt(holder.quantity.getText().toString())};
-
+        def = product.getQuantity();
         holder.cong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.quantity.setText(i[0]++ + "");
+                def += 1;
+                product.setQuantity(def);
+                holder.quantity.setText(product.getQuantity()+"");
             }
         });
         holder.tru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(i[0]>0){
-                    holder.quantity.setText(i[0]-- +"");
+                if(def > 1){
+                    def -= 1;
+                    product.setQuantity(def);
+                    holder.quantity.setText(product.getQuantity()+"");
                 }
+            }
+        });
+        holder.remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iClickItemProductListener.onClickBuy(product);
             }
         });
     }
@@ -81,12 +92,13 @@ public class FoodCartAdapter extends RecyclerView.Adapter<FoodCartAdapter.FoodVi
         private ImageView imageView;
         private TextView textViewName,textViewPrice,quantity;
         private CardView cardView;
-        private Button cong,tru;
+        private Button cong,tru,remove;
 
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            remove = itemView.findViewById(R.id.remove);
             cong = itemView.findViewById(R.id.cong);
             tru = itemView.findViewById(R.id.tru);
             quantity = itemView.findViewById(R.id.quantity);

@@ -19,6 +19,7 @@ public class CartDao {
         sqLiteDatabase = dbHelper.getReadableDatabase();
     }
 
+
     @SuppressLint("Range")
     public List<Cart> get(String sql, String ...selectArgs){
         List<Cart> list = new ArrayList<>();

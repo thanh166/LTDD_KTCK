@@ -60,8 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 AccountDao accountDao = new AccountDao(MainActivity.this);
                 List<Account> list = accountDao.getALL();
                 int i = 0;
+                boolean bol = false;
                 for(Account a : list){
                     if(email.equals(a.getName()) && password.equals(a.getPassword())){
+                        bol = true;
                         account = a;
                         onPause();
                         Intent intent = new Intent(MainActivity.this, Home.class);
@@ -70,7 +72,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                Toast.makeText(MainActivity.this, "Authentication fail", Toast.LENGTH_SHORT).show();
+                if(bol){
+                    Toast.makeText(MainActivity.this, "Authentication success", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "Authentication fail", Toast.LENGTH_SHORT).show();
+                }
+
             }
 
             private void onClickSignin() {

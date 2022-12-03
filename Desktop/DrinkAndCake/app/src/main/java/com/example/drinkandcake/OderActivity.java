@@ -1,5 +1,6 @@
 package com.example.drinkandcake;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +19,7 @@ import com.example.drinkandcake.model.Product;
 import com.example.drinkandcake.my_interface.IClickItemProductListener;
 import com.example.drinkandcake.sqlite.CartDao;
 import com.example.drinkandcake.sqlite.ProductDao;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,12 +67,41 @@ public class OderActivity extends AppCompatActivity {
             }
             @Override
             public void onClickBuy(Product product) {
+                onClickRemove(product);
             }
             @Override
             public void onClickCart(Product product, int quantity) {
             }
         });
         recyclerView.setAdapter(adapter);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.action_home:
+                        Toast.makeText(OderActivity.this, "home ", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(OderActivity.this, Home.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.action_cart:
+                        Toast.makeText(OderActivity.this, "cart ", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.action_history:
+                        Toast.makeText(OderActivity.this, "history ", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(OderActivity.this, HistoryActivity.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.action_profile:
+                        Toast.makeText(OderActivity.this, "profile ", Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(OderActivity.this, ProfileActivity.class);
+                        startActivity(intent2);
+                        break;
+                }
+                return true;
+            }
+        });
 
         btnDathang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +111,14 @@ public class OderActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void onClickRemove(Product product) {
+        CartDao cartDao = new CartDao(this);
+        cartDao.deleteIdP(Integer.parseInt(product.getId()));
+        finish();
+        startActivity(getIntent());
+    }
+
     private void onClickGoToDetail(Product product){
         Intent intent = new Intent(this,BuyProductActivity.class);
         Bundle bundle = new Bundle();

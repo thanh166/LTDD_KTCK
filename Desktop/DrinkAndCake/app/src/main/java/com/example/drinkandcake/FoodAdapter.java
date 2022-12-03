@@ -3,6 +3,7 @@ package com.example.drinkandcake;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,6 +49,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
                 iClickItemProductListener.onClickItemProduct(product);
             }
         });
+        holder.addCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iClickItemProductListener.onClickCart(product,1);
+            }
+        });
     }
 
     @Override
@@ -63,11 +70,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         private ImageView imageView;
         private TextView textViewName,textViewPrice;
         private CardView cardView;
+        private Button addCart;
 
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            addCart = itemView.findViewById(R.id.addCart);
             cardView = itemView.findViewById(R.id.layout_item);
             imageView = itemView.findViewById(R.id.img_food);
             textViewName = itemView.findViewById(R.id.tv_name_food);

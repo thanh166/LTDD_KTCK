@@ -20,6 +20,7 @@ import java.util.List;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
     private List<Product> mListFood;
     private IClickItemProductListener iClickItemProductListener;
+    private int def = 1;
 
     public CategoryAdapter(List<Product> mListFood,IClickItemProductListener iClickItemProductListener) {
         this.mListFood = mListFood;
@@ -41,26 +42,36 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.textViewPrice.setText(product.getPrice()+"");
         holder.textViewName.setText(product.getName());
         //holder.imageView.setImageResource(Integer.parseInt(product.getImage()));
+        if(product.getQuantity() == 0){
+            product.setQuantity(def);
+            holder.quantity.setText(product.getQuantity()+"");
+        }
         holder.quantity.setText(product.getQuantity()+"");
-        final int[] i = {Integer.parseInt(holder.quantity.getText().toString())};
+        //final int[] i = {Integer.parseInt(holder.quantity.getText().toString())};
+        def = product.getQuantity();
 
         holder.cong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    holder.quantity.setText(i[0]++ + "");
+                def += 1;
+                product.setQuantity(def);
+                holder.quantity.setText(product.getQuantity()+"");
             }
         });
         holder.tru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(i[0]>0){
-                    holder.quantity.setText(i[0]-- +"");
+                if(def > 1){
+                    def -= 1;
+                    product.setQuantity(def);
+                    holder.quantity.setText(product.getQuantity()+"");
                 }
             }
         });
         holder.buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                product.setQuantity(def);
                 iClickItemProductListener.onClickBuy(product);
             }
         });
@@ -70,6 +81,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                 iClickItemProductListener.onClickCart(product,Integer.parseInt(holder.quantity.getText().toString()));
             }
         });
+
     }
 
     @Override

@@ -83,9 +83,26 @@ public class CategoryActivity extends AppCompatActivity {
         String nameU = myR.getString("nameUser","");
 
         CartDao cartDao = new CartDao(this);
-        Cart cart = new Cart(Integer.parseInt(product.getId()),idU,quantity);
-        cartDao.insert(cart);
 
+        List<Cart> listC = new ArrayList<>();
+        listC = cartDao.getByIdUser(idU+"");
+        Cart cart = new Cart();
+        boolean a = false;
+        for(Cart c :listC){
+            if((c.getIdP()+"").equals(product.getId())){
+                cart = c;
+                cart.setQuantity(c.getQuantity()+product.getQuantity());
+                a = true;
+                break;
+            }
+        }
+        if(a){
+            cartDao.update(cart);
+        }else{
+            Cart cart1 = new Cart(Integer.parseInt(product.getId()),idU,quantity);
+            cartDao.insert(cart1);
+        }
         Toast.makeText(this, "Thêm thành công", Toast.LENGTH_SHORT).show();
     }
+
 }

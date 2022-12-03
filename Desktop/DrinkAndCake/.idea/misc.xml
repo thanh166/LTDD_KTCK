@@ -18,15 +18,19 @@
         <entry key="app/src/main/res/drawable/vien.xml" value="0.197" />
         <entry key="app/src/main/res/layout/activity_buy_product.xml" value="0.2015625" />
         <entry key="app/src/main/res/layout/activity_category.xml" value="0.14010416666666667" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.1171875" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2562989165817482" />
         <entry key="app/src/main/res/layout/activity_oder.xml" value="0.14010416666666667" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1171875" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_thanh_cong.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_xac_nhan_don_hang.xml" value="0.14010416666666667" />
         <entry key="app/src/main/res/layout/layout_ProductCart.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/layout_category.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_food.xml" value="0.25812937418619797" />
+        <entry key="app/src/main/res/layout/layout_productcart.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/menu_bottom_nav.xml" value="0.1828125" />
       </map>
     </option>
   </component>
